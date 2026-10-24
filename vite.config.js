@@ -4,7 +4,7 @@ import babel from '@rolldown/plugin-babel'
 import { defineConfig } from 'vite'
 
 export default defineConfig({
-  base: '/react-music/',
+  base: '/music-website/',
   plugins: [
     react(),
     babel({ presets: [reactCompilerPreset()] })
