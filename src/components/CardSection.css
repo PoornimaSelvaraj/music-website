@@ -1,0 +1,468 @@
+.card-section {
+  position: relative;
+  width: 100%;
+  padding: 35px 0 55px;
+  background: #fff;
+  overflow: visible;
+  z-index: 1;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.card-section,
+.card-section * {
+  box-sizing: border-box;
+}
+
+.card-section .container-fluid,
+.card-section .row,
+.card-section .row > div,
+.instrument-card-wrap {
+  overflow: visible !important;
+}
+
+.card-section-title {
+  margin: 0 0 5px;
+  color: #171717;
+  font-size: 24px;
+  font-weight: 750;
+  line-height: 1.3;
+}
+
+.card-section-subtitle {
+  margin: 0 0 95px;
+  color: #777;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.instrument-card-row {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 20px;
+  overflow: visible;
+}
+
+.instrument-card-row > div {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.instrument-card-wrap {
+  position: relative;
+  height: 100%;
+  min-width: 0;
+}
+
+/* CARD DESIGN */
+.music-card {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  border-radius: 15px;
+  color: #fff;
+  box-shadow: 0 6px 13px rgba(0, 0, 0, 0.13);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.guitar-card {
+  background: linear-gradient(140deg, #1769f5, #0750c9);
+}
+
+.piano-card {
+  background: linear-gradient(140deg, #9560f4, #5c2abd);
+}
+
+.drums-card {
+  background: linear-gradient(140deg, #ff9b13, #d86b00);
+}
+
+.sax-card {
+  background: linear-gradient(140deg, #1bb99b, #087b69);
+}
+
+/* INSTRUMENT IMAGE */
+.instrument-image-wrap {
+  position: absolute;
+  top: -88px;
+  left: 5%;
+  width: 90%;
+  height: 185px;
+  overflow: visible;
+  z-index: 2;
+  pointer-events: none;
+  background: transparent;
+}
+
+.instrument-image {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 185px;
+  object-fit: contain;
+  object-position: center bottom;
+  background: transparent !important;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  mix-blend-mode: multiply;
+  transform: translateY(0) scale(1);
+  transform-origin: center bottom;
+  transition: transform 0.35s ease;
+}
+
+/* CARD CONTENT */
+.music-card-info {
+  position: absolute;
+  left: 15px;
+  right: 12px;
+  bottom: 16px;
+  z-index: 3;
+}
+
+.music-card-info h3 {
+  margin: 0 0 6px;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 750;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+
+.music-card-info p {
+  margin: 0 0 13px;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 10px;
+  line-height: 1.4;
+}
+
+.music-card-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  max-width: 100%;
+  padding: 7px 12px;
+  border: none;
+  border-radius: 30px;
+  background: #fff;
+  color: #222;
+  font-size: 9px;
+  font-weight: 750;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.music-card-button i {
+  font-size: 12px;
+}
+
+/* LAPTOP AND DESKTOP HOVER */
+@media (hover: hover) and (pointer: fine) {
+  .music-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+    z-index: 5;
+  }
+
+  .music-card:hover .instrument-image {
+    transform: translateY(-9px) scale(1.06);
+  }
+
+  .music-card:hover .music-card-button {
+    background: #171717;
+    color: #fff;
+  }
+}
+
+/* LARGE DESKTOP */
+@media (min-width: 1201px) {
+  .card-section {
+    padding: 35px 0 60px;
+  }
+
+  .instrument-card-row {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+  }
+
+  .music-card {
+    height: 250px;
+  }
+
+  .instrument-image-wrap {
+    top: -88px;
+    height: 185px;
+  }
+
+  .instrument-image {
+    height: 185px;
+  }
+}
+
+/* LAPTOP */
+@media (min-width: 992px) and (max-width: 1200px) {
+  .card-section {
+    padding: 32px 0 50px;
+  }
+
+  .card-section .container-fluid {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .card-section-title {
+    font-size: 23px;
+  }
+
+  .card-section-subtitle {
+    margin-bottom: 85px;
+  }
+
+  .instrument-card-row {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .music-card {
+    height: 235px;
+  }
+
+  .instrument-image-wrap {
+    top: -78px;
+    height: 170px;
+  }
+
+  .instrument-image {
+    height: 170px;
+  }
+
+  .music-card-info {
+    left: 12px;
+    right: 10px;
+    bottom: 14px;
+  }
+
+  .music-card-info h3 {
+    font-size: 15px;
+  }
+}
+
+/* TABLET */
+@media (min-width: 576px) and (max-width: 991px) {
+  .card-section {
+    padding: 32px 0 45px;
+  }
+
+  .card-section .container-fluid {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .card-section-title {
+    font-size: 23px;
+  }
+
+  .card-section-subtitle {
+    margin-bottom: 80px;
+  }
+
+  .instrument-card-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 18px;
+    row-gap: 80px;
+  }
+
+  .music-card {
+    height: 235px;
+  }
+
+  .instrument-image-wrap {
+    top: -72px;
+    left: 5%;
+    width: 90%;
+    height: 160px;
+  }
+
+  .instrument-image {
+    height: 160px;
+  }
+
+  .music-card-info {
+    left: 13px;
+    right: 11px;
+    bottom: 14px;
+  }
+
+  .music-card-info h3 {
+    font-size: 16px;
+  }
+
+  .music-card-info p {
+    font-size: 10px;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 575px) {
+  .card-section {
+    padding: 30px 0 40px;
+  }
+
+  .card-section .container-fluid {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .card-section-title {
+    font-size: 22px;
+    line-height: 1.3;
+  }
+
+  .card-section-subtitle {
+    margin-bottom: 72px;
+    font-size: 11px;
+  }
+
+  .instrument-card-row {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 78px;
+  }
+
+  .instrument-card-row > div {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .instrument-card-wrap {
+    width: 100%;
+  }
+
+  .music-card {
+    width: 100%;
+    height: 225px;
+    border-radius: 13px;
+  }
+
+  .instrument-image-wrap {
+    top: -58px;
+    left: 7%;
+    width: 86%;
+    height: 145px;
+  }
+
+  .instrument-image {
+    width: 100%;
+    height: 145px;
+    object-fit: contain;
+    object-position: center bottom;
+  }
+
+  .music-card-info {
+    left: 12px;
+    right: 10px;
+    bottom: 13px;
+  }
+
+  .music-card-info h3 {
+    font-size: 15px;
+  }
+
+  .music-card-info p {
+    font-size: 10px;
+    margin-bottom: 10px;
+  }
+
+  .music-card-button {
+    padding: 7px 10px;
+    font-size: 9px;
+  }
+}
+
+/* SMALL MOBILE */
+@media (max-width: 350px) {
+  .card-section {
+    padding: 25px 0 30px;
+  }
+
+  .card-section .container-fluid {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .card-section-title {
+    font-size: 20px;
+  }
+
+  .card-section-subtitle {
+    margin-bottom: 62px;
+    font-size: 10px;
+  }
+
+  .instrument-card-row {
+    gap: 70px;
+  }
+
+  .music-card {
+    height: 215px;
+  }
+
+  .instrument-image-wrap {
+    top: -50px;
+    height: 130px;
+  }
+
+  .instrument-image {
+    height: 130px;
+  }
+
+  .music-card-info {
+    left: 10px;
+    right: 8px;
+    bottom: 12px;
+  }
+
+  .music-card-info h3 {
+    font-size: 14px;
+  }
+
+  .music-card-info p {
+    font-size: 9px;
+  }
+
+  .music-card-button {
+    gap: 5px;
+    padding: 6px 9px;
+    font-size: 8px;
+  }
+}
+
+/* MOBILE TAP ANIMATION */
+@media (hover: none) and (pointer: coarse) {
+  .music-card:active {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+  }
+
+  .music-card:active .instrument-image {
+    transform: translateY(-9px) scale(1.06);
+  }
+
+  .music-card:active .music-card-button {
+    background: #171717;
+    color: #fff;
+  }
+}
+
+/* ACCESSIBILITY */
+@media (prefers-reduced-motion: reduce) {
+  .music-card,
+  .instrument-image,
+  .music-card-button {
+    transition: none;
+  }
+}
