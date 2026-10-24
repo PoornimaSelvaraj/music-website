@@ -1,30 +1,31 @@
-
 import React from "react";
 import "./CardSection.css";
+
+const baseUrl = import.meta.env.BASE_URL;
 
 const cards = [
   {
     name: "Guitar Pro",
     category: "String Instruments",
-    image: "/guitar1.png",
+    image: `${baseUrl}guitar1.png`,
     color: "guitar-card",
   },
   {
     name: "Grand Piano",
     category: "Keyboards & Pianos",
-    image: "/piano2.png",
+    image: `${baseUrl}piano2.png`,
     color: "piano-card",
   },
   {
     name: "Studio Drums",
     category: "Drums & Percussion",
-    image: "/drums1.png",
+    image: `${baseUrl}drums1.png`,
     color: "drums-card",
   },
   {
     name: "Alto Sax",
     category: "Brass & Woodwinds",
-    image: "/saxophone3.png",
+    image: `${baseUrl}saxophone3.png`,
     color: "sax-card",
   },
 ];
@@ -55,12 +56,14 @@ export default function CardSection() {
                       src={card.image}
                       alt={card.name}
                       loading="lazy"
+                      onError={(e) => {
+                        console.error("Image failed to load:", e.currentTarget.src);
+                      }}
                     />
                   </div>
 
                   <div className="music-card-info">
                     <h3>{card.name}</h3>
-
                     <p>Category: {card.category}</p>
 
                     <button

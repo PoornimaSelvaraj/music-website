@@ -1,13 +1,14 @@
-
 import React from "react";
 
+const baseUrl = import.meta.env.BASE_URL;
+
 const categories = [
-  { name: "Pianos", count: "85+ Items", image: "/piano.jpg", featured: true },
-  { name: "Drums", count: "120+ Items", image: "/drums.jpg" },
-  { name: "Guitars", count: "150+ Items", image: "/guitar.jpg" },
-  { name: "Violins", count: "60+ Items", image: "/violin.jpg" },
-  { name: "Saxophones", count: "45+ Items", image: "/saxophone.jpg" },
-  { name: "Microphones", count: "80+ Items", image: "/microphone.jpg" },
+  { name: "Pianos", count: "85+ Items", image: `${baseUrl}piano.jpg`, featured: true },
+  { name: "Drums", count: "120+ Items", image: `${baseUrl}drums.jpg` },
+  { name: "Guitars", count: "150+ Items", image: `${baseUrl}guitar.jpg` },
+  { name: "Violins", count: "60+ Items", image: `${baseUrl}violin.jpg` },
+  { name: "Saxophones", count: "45+ Items", image: `${baseUrl}saxophone.jpg` },
+  { name: "Microphones", count: "80+ Items", image: `${baseUrl}microphone.jpg` },
 ];
 
 function CategorySection() {

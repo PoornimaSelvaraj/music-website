@@ -10,7 +10,7 @@ function Home() {
           width: 100%;
           min-height: 650px;
           padding: 75px 0 35px;
-          background-image: url('/music-hero.png');
+          background-image: url('/music-website/music-hero.png');
           background-size: cover;
           background-position: center;
           background-repeat: no-repeat;
